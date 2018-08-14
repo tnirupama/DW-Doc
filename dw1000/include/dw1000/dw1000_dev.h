@@ -45,27 +45,28 @@ extern "C" {
 #include <hal/hal_spi.h>
 #include <dw1000/dw1000_regs.h>
 
-#define DWT_DEVICE_ID   (0xDECA0130) 
-#define DWT_SUCCESS (0)
-#define DWT_ERROR   (-1)
-#define DWT_TIME_UNITS          (1.0/499.2e6/128.0)
+#define DWT_DEVICE_ID   (0xDECA0130) //!< Decawave Device ID 
+#define DWT_SUCCESS (0)              //!< Success
+#define DWT_ERROR   (-1)             //!< Error
+#define DWT_TIME_UNITS          (1.0/499.2e6/128.0) //!< DWT time units calculation
 
-#define DW1000_DEV_TASK_PRIO        MYNEWT_VAL(DW1000_DEV_TASK_PRIO)
-#define DW1000_DEV_TASK_STACK_SZ    MYNEWT_VAL(DW1000_DEV_TASK_STACK_SZ)
+#define DW1000_DEV_TASK_PRIO        MYNEWT_VAL(DW1000_DEV_TASK_PRIO)   //!< Priority for DW1000 Dev Task
+#define DW1000_DEV_TASK_STACK_SZ    MYNEWT_VAL(DW1000_DEV_TASK_STACK_SZ) //!< Stack sise for DW1000 Deve Task
 
-#define BROADCAST_ADDRESS          0xffff
+#define BROADCAST_ADDRESS          0xffff  //!< Broad cast addresss
 
+//! Defined constants for setting the task into blocking/non-blocking mode 
 typedef enum _dw1000_dev_modes_t{
     DWT_BLOCKING,
     DWT_NONBLOCKING
 }dw1000_dev_modes_t;
-
+//! Device Role
 typedef enum _dw1000_dev_role_t{
     NODE_0,
     NODE,
     TAG
 }dw1000_dev_role_t;
-
+//! Constants defined as Extension id for particular moudule
 typedef enum _dw1000_extension_id_t{
     DW1000_CCP,
     DW1000_PAN,
@@ -81,6 +82,7 @@ typedef struct _dw1000_cmd{
     uint32_t subaddress:15;    
 }dw1000_cmd_t;
 
+//! Status bits for every event of Dw1000
 typedef struct _dw1000_dev_status_t{
     uint32_t selfmalloc:1;
     uint32_t initialized:1;
@@ -97,6 +99,7 @@ typedef struct _dw1000_dev_status_t{
     uint32_t sleeping:1;
 }dw1000_dev_status_t;
 
+//! Device control status bits
 typedef struct _dw1000_dev_control_t{
     uint32_t wait4resp_enabled:1;
     uint32_t wait4resp_delay_enabled:1;
@@ -108,6 +111,7 @@ typedef struct _dw1000_dev_control_t{
     uint32_t wakeup_LLDO:1;
 }dw1000_dev_control_t;
 
+//! DW1000 receiver configuration parameters
 typedef struct _dw1000_dev_rx_config_t{
     uint8_t pacLength;                      //!< Acquisition Chunk Size DWT_PAC8..DWT_PAC64 (Relates to RX preamble length)
     uint8_t preambleCodeIndex;              //!< RX preamble code
@@ -116,11 +120,13 @@ typedef struct _dw1000_dev_rx_config_t{
     uint16_t sfdTimeout;                    //!< SFD timeout value (in symbols) (preamble length + 1 + SFD length - PAC size). 
 }dw1000_dev_rx_config_t;
 
+//! DW1000 transmitterr configuration parameters
 typedef struct _dw1000_dev_tx_config_t{
     uint8_t preambleCodeIndex;              //!< TX preamble code
     uint8_t preambleLength;                 //!< DWT_PLEN_64..DWT_PLEN_4096
 }dw1000_dev_tx_config_t;
 
+//! DW1000 transmitter power configuration parameters
 typedef struct _dw1000_dev_txrf_config_t {
     uint8_t   PGdly; 
     union _power {   
@@ -140,6 +146,7 @@ typedef struct _dw1000_dev_txrf_config_t {
     };
 }dw1000_dev_txrf_config_t;
 
+//! DW1000 device configuration parameters
 typedef struct _dw1000_dev_config_t{
     uint8_t channel;                        //!< channel number {1, 2, 3, 4, 5, 7 }
     uint8_t dataRate;                       //!< Data Rate {DWT_BR_110K, DWT_BR_850K or DWT_BR_6M8}
@@ -156,7 +163,7 @@ typedef struct _dw1000_dev_config_t{
     uint32_t bias_correction_enable:1;
 }dw1000_dev_config_t;
 
-
+//! DW1000 receiver diagnostics parameters
 typedef struct _dw1000_dev_rxdiag_t{
     uint16_t    fp_idx;             // First path index (10.6 bits fixed point integer)
     uint16_t    fp_amp;             // Amplitude at floor(index FP) + 1
@@ -169,8 +176,9 @@ typedef struct _dw1000_dev_rxdiag_t{
 
 struct _dw1000_dev_instance_t;
 typedef struct _dw1000_extension_callback_t dw1000_extension_callbacks_t;
+//! Structure of extension call backs structure common for all the modules of linked list type
 typedef struct _dw1000_extension_callback_t{
-    dw1000_extension_id_t id;
+    dw1000_extension_id_t id;                  
     void (* tx_complete_cb) (struct _dw1000_dev_instance_t *);
     void (* rx_complete_cb) (struct _dw1000_dev_instance_t *);
     void (* rx_timeout_cb)  (struct _dw1000_dev_instance_t *);
@@ -180,6 +188,7 @@ typedef struct _dw1000_extension_callback_t{
     dw1000_extension_callbacks_t * previous;
 }dw1000_extension_callbacks_t;
 
+//! Device instance hold all the data common across all the modules
 typedef struct _dw1000_dev_instance_t{
     struct os_dev uwb_dev;     /** Has to be here for cast in create_dev to work */
     struct os_mutex *spi_mutex;  /** Pointer to global spi mutex if available  */
@@ -268,7 +277,7 @@ typedef struct _dw1000_dev_instance_t{
     dw1000_dev_role_t dev_type;
 }dw1000_dev_instance_t;
 
-/* Used to pass data to init function from bsp_hal */
+//! Used to pass data to init function from bsp_hal
 struct dw1000_dev_cfg {
     struct os_mutex *spi_mutex;
     int spi_num;
