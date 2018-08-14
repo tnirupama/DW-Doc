@@ -51,46 +51,52 @@ extern "C" {
 #include <dsp/polyval.h>
 #endif
 
+//! Timestamps and blink frame of ccp frame
 typedef union {
+//! Frame format of ccp
     struct _ccp_frame_t{
-        struct _ieee_blink_frame_t;
-        uint64_t transmission_timestamp;    // transmission timestamp.
-        uint64_t reception_timestamp;       // reception timestamp.
-        float correction_factor;         // receiver clock correction factor
+//! Frame format of blink frame
+        struct _ieee_blink_frame_t;          
+        uint64_t transmission_timestamp;    //!< transmission timestamp.
+        uint64_t reception_timestamp;       //!< reception timestamp.
+        float correction_factor;            //!< receiver clock correction factor
     }__attribute__((__packed__, aligned(1)));
     uint8_t array[sizeof(struct _ieee_blink_frame_t)];
 }ccp_frame_t;
 
+//! Status of ccp
 typedef struct _dw1000_ccp_status_t{
-    uint16_t selfmalloc:1;
-    uint16_t initialized:1;
-    uint16_t valid:1;
-    uint16_t start_tx_error:1;
-    uint16_t timer_enabled:1;
+    uint16_t selfmalloc:1;            //!< Internal flag for memory garbage collection 
+    uint16_t initialized:1;           //!< Instance allocated 
+    uint16_t valid:1;                 //!< Set for valid parameters 
+    uint16_t start_tx_error:1;        //!< Set for start transmit error 
+    uint16_t timer_enabled:1;         //!< Indicates timer is enabled 
 }dw1000_ccp_status_t;
 
+//! ccp config structure of postprocess 
 typedef struct _dw1000_ccp_config_t{
-    uint16_t postprocess:1;
-    uint16_t fs_xtalt_autotune:1;
+    uint16_t postprocess:1;           //!< CCP postprocess
+    uint16_t fs_xtalt_autotune:1;     //!< 
 }dw1000_ccp_config_t;
 
+//! Structure of ccp instance
 typedef struct _dw1000_ccp_instance_t{
-    struct _dw1000_dev_instance_t * parent;
+    struct _dw1000_dev_instance_t * parent;     //!< Pointer to _dw1000_dev_instance_t
 #if MYNEWT_VAL(CLOCK_CALIBRATION_ENABLED)
-    struct _clkcal_instance_t * clkcal;
+    struct _clkcal_instance_t * clkcal;         //!< TODO
 #endif
 #if MYNEWT_VAL(FS_XTALT_AUTOTUNE_ENABLED)
-    struct _sos_instance_t * xtalt_sos;
+    struct _sos_instance_t * xtalt_sos;        //!< TODO
 #endif
-    struct os_sem sem;
-    struct os_callout callout_timer;
-    struct os_callout callout_postprocess;
-    dw1000_ccp_status_t status;
-    dw1000_ccp_config_t config;
-    uint32_t period;
-    uint16_t nframes;
-    uint16_t idx;
-    ccp_frame_t * frames[];
+    struct os_sem sem;                          //!<Structure containing os semaphores
+    struct os_callout callout_timer;            //!< Structure of callout_timer
+    struct os_callout callout_postprocess;      //!< Structure of callout_postprocess
+    dw1000_ccp_status_t status;                 //!< DW1000 ccp status parameters
+    dw1000_ccp_config_t config;                 //!< DW1000 ccp config parameters 
+    uint32_t period;                            //!< Pulse repetition period
+    uint16_t nframes;                           //!< Number of buffers defined to store the data 
+    uint16_t idx;                               //!< Indicates number of DW1000 instances 
+    ccp_frame_t * frames[];                     //!< Buffers to ccp frames 
 }dw1000_ccp_instance_t; 
 
 dw1000_ccp_instance_t * dw1000_ccp_init(dw1000_dev_instance_t * inst,  uint16_t nframes, uint64_t clock_master);

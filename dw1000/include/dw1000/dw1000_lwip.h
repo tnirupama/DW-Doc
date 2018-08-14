@@ -47,50 +47,55 @@ extern "C" {
 #include <lwip/pbuf.h>
 #include <lwip/ip_addr.h>
 
-
+//! Lwip config data
 typedef struct _dw1000_lwip_config_t{
-   uint16_t poll_resp_delay;    // Delay between frames, in UWB microseconds.
-   uint16_t resp_timeout;       // Receive response timeout, in UWB microseconds.
-   uint32_t uwbtime_to_systime;
+   uint16_t poll_resp_delay;    //!< Delay between frames, in UWB microseconds.
+   uint16_t resp_timeout;       //!< Receive response timeout, in UWB microseconds.
+   uint32_t uwbtime_to_systime; //!< UWB time to system time
 }dw1000_lwip_config_t;
 
+//! Lwip modes based on wait for transmit
 typedef enum _dw1000_lwip_modes_t{
-    LWIP_BLOCKING,
-    LWIP_NONBLOCKING
+    LWIP_BLOCKING,              //!< lwip blocking mode
+    LWIP_NONBLOCKING            //!< lwip non-blocking mode
 }dw1000_lwip_modes_t;
 
+//! Status of lwip instance
 typedef struct _dw1000_lwip_status_t{
-    uint32_t selfmalloc:1;
-    uint32_t initialized:1;
-    uint32_t start_tx_error:1;
-    uint32_t start_rx_error:1;
-    uint32_t tx_frame_error:1;
-    uint32_t rx_error:1;
-    uint32_t rx_timeout_error:1;
-    uint32_t request_timeout:1;
+    uint32_t selfmalloc:1;             //!< Internal flag for memory garbage collection 
+    uint32_t initialized:1;            //!< Instance allocated 
+    uint32_t start_tx_error:1;         //!< Set for start transmit error 
+    uint32_t start_rx_error:1;         //!< Set for start receive error 
+    uint32_t tx_frame_error:1;         //!< Set transmit frame error
+    uint32_t rx_error:1;               //!< Set for receive error
+    uint32_t rx_timeout_error:1;       //!< Set for receive timeout error 
+    uint32_t request_timeout:1;        //!< Set for request timeout
 }dw1000_lwip_status_t;
 
+//! Attributes of lwip instance
 typedef struct _dw1000_lwip_instance_t{
-    struct _dw1000_dev_instance_t * dev;
-    struct os_sem sem;
-    struct os_sem data_sem;
-    struct _ieee_std_frame_t * tx_frame;
-    struct _ieee_std_frame_t * rx_frame;
-    dw1000_lwip_config_t * config;
-    dw1000_lwip_status_t status;
-    uint16_t nframes;
-    uint16_t buf_idx;
-    uint16_t buf_len;
-    struct netif * netif;
-    char * data_buf[];
+    struct _dw1000_dev_instance_t * dev;   //!< Structure for DW1000 instance 
+    struct os_sem sem;                     //!< Structure for OS semaphores
+    struct os_sem data_sem;                //!< Structure for data of semaphores
+    struct _ieee_std_frame_t * tx_frame;   //!< Structure of transmit frame
+    struct _ieee_std_frame_t * rx_frame;   //!< Structure of receive frame
+    dw1000_lwip_config_t * config;         //!< lwip config parameters 
+    dw1000_lwip_status_t status;           //!< lwip status
+    uint16_t nframes;                      //!< Number of buffers defined to store the lwip data  
+    uint16_t buf_idx;                      //!< Indicates number of buffer instances for the chosen bsp 
+    uint16_t buf_len;                      //!< Indicates buffer length 
+    struct netif * netif;                  //!< Network interface 
+    char * data_buf[];                     //!< Data buffers 
 }dw1000_lwip_instance_t;
 
+//! lwip callback 
 typedef struct _dw1000_lwip_cb_t{
    void (*recv)(dw1000_dev_instance_t * inst, uint16_t timeout);
 }dw1000_lwip_cb_t;
 
+//! lwip context based on callback 
 typedef struct _dw1000_lwip_context_t{
-   dw1000_lwip_cb_t rx_cb;
+   dw1000_lwip_cb_t rx_cb;    //!< DW1000 lwip receive callback
 }dw1000_lwip_context_t;
 
 dw1000_lwip_config_t *

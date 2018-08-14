@@ -43,13 +43,13 @@ extern "C" {
 #include <dw1000/dw1000_regs.h>
 #include <dw1000/dw1000_dev.h>
 
-// OTP addresses definitions
-#define OTP_LDOTUNE_ADDRESS (0x04)
-#define OTP_PARTID_ADDRESS (0x06)
-#define OTP_LOTID_ADDRESS  (0x07)
-#define OTP_VBAT_ADDRESS   (0x08)
-#define OTP_VTEMP_ADDRESS  (0x09)
-#define OTP_XTRIM_ADDRESS  (0x1E)
+//! OTP addresses definitions
+#define OTP_LDOTUNE_ADDRESS (0x04)        //!< OTP addresses definitions for LDO voltage tuning
+#define OTP_PARTID_ADDRESS (0x06)         //!< OTP addresses definitions for PARTID
+#define OTP_LOTID_ADDRESS  (0x07)         //!< OTP address definition for LOTID
+#define OTP_VBAT_ADDRESS   (0x08)         //!< OTP address definition for voltage
+#define OTP_VTEMP_ADDRESS  (0x09)         //!< OTP addrress defiition for temperature
+#define OTP_XTRIM_ADDRESS  (0x1E)         //!< OTP address definition for crystal trim
 
 uint32_t _dw1000_otp_read(struct _dw1000_dev_instance_t * inst, uint16_t address);
 void dw1000_opt_read(struct _dw1000_dev_instance_t * inst, uint32_t address, uint32_t * buffer, uint16_t length);
