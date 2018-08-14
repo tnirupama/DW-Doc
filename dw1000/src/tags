@@ -1,0 +1,209 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+FS_XTALT_SETTLINGTIME	dw1000_ccp.c	50;"	d	file:
+NUM_BR	dw1000_mac.c	44;"	d	file:
+NUM_BW	dw1000_mac.c	47;"	d	file:
+NUM_PACS	dw1000_mac.c	46;"	d	file:
+NUM_PRF	dw1000_mac.c	45;"	d	file:
+NUM_SFD	dw1000_mac.c	48;"	d	file:
+_dw1000_otp_read	dw1000_otp.c	/^uint32_t _dw1000_otp_read(struct _dw1000_dev_instance_t * inst, uint16_t address)$/;"	f
+_dw1000_phy_load_microcode	dw1000_phy.c	/^void _dw1000_phy_load_microcode(struct _dw1000_dev_instance_t * inst)$/;"	f
+_dw1000_read_rxtime	dw1000_mac.c	/^inline uint64_t _dw1000_read_rxtime(struct _dw1000_dev_instance_t * inst){$/;"	f
+_dw1000_read_rxtime_raw	dw1000_mac.c	/^inline uint64_t _dw1000_read_rxtime_raw(struct _dw1000_dev_instance_t * inst){$/;"	f
+_dw1000_read_systime	dw1000_mac.c	/^inline uint64_t _dw1000_read_systime(struct _dw1000_dev_instance_t * inst){$/;"	f
+agc_cfg_struct	dw1000_mac.c	/^} agc_cfg_struct ;$/;"	t	typeref:struct:__anon1	file:
+agc_config	dw1000_mac.c	/^const agc_cfg_struct agc_config =$/;"	v
+ccp_postprocess	dw1000_ccp.c	/^static void ccp_postprocess(struct os_event * ev){$/;"	f	file:
+ccp_rx_complete_cb	dw1000_ccp.c	/^ccp_rx_complete_cb(struct _dw1000_dev_instance_t * inst){$/;"	f	file:
+ccp_rx_error_cb	dw1000_ccp.c	/^ccp_rx_error_cb(struct _dw1000_dev_instance_t * inst){$/;"	f	file:
+ccp_rx_timeout_cb	dw1000_ccp.c	/^ccp_rx_timeout_cb(struct _dw1000_dev_instance_t * inst){$/;"	f	file:
+ccp_timer_ev_cb	dw1000_ccp.c	/^ccp_timer_ev_cb(struct os_event *ev) {$/;"	f	file:
+ccp_timer_init	dw1000_ccp.c	/^ccp_timer_init(struct _dw1000_dev_instance_t * inst) {$/;"	f	file:
+ccp_tx_complete_cb	dw1000_ccp.c	/^ccp_tx_complete_cb(struct _dw1000_dev_instance_t * inst){$/;"	f	file:
+ccp_tx_error_cb	dw1000_ccp.c	/^ccp_tx_error_cb(struct _dw1000_dev_instance_t * inst){$/;"	f	file:
+chan_idx	dw1000_mac.c	/^const uint8_t chan_idx[] = {0, 0, 1, 2, 3, 4, 0, 5};$/;"	v
+cntxt	dw1000_lwip.c	/^dw1000_lwip_context_t cntxt;$/;"	v
+digital_bb_config	dw1000_mac.c	/^const uint32_t digital_bb_config[NUM_PRF][NUM_PACS] =$/;"	v
+dtune1	dw1000_mac.c	/^const uint16_t dtune1[] =$/;"	v
+dw1000_add_extension_callbacks	dw1000_dev.c	/^dw1000_add_extension_callbacks(dw1000_dev_instance_t* inst, dw1000_extension_callbacks_t callbacks){$/;"	f
+dw1000_ccp_blink	dw1000_ccp.c	/^dw1000_ccp_blink(struct _dw1000_dev_instance_t * inst, dw1000_dev_modes_t mode){$/;"	f	file:
+dw1000_ccp_free	dw1000_ccp.c	/^dw1000_ccp_free(dw1000_ccp_instance_t * inst){$/;"	f
+dw1000_ccp_init	dw1000_ccp.c	/^dw1000_ccp_init(struct _dw1000_dev_instance_t * inst, uint16_t nframes, uint64_t clock_master){$/;"	f
+dw1000_ccp_set_ext_callbacks	dw1000_ccp.c	/^void dw1000_ccp_set_ext_callbacks(dw1000_dev_instance_t * inst, dw1000_extension_callbacks_t ccp_cbs){$/;"	f
+dw1000_ccp_set_postprocess	dw1000_ccp.c	/^dw1000_ccp_set_postprocess(dw1000_ccp_instance_t * inst, os_event_fn * ccp_postprocess){$/;"	f
+dw1000_ccp_start	dw1000_ccp.c	/^dw1000_ccp_start(struct _dw1000_dev_instance_t * inst){$/;"	f
+dw1000_ccp_stop	dw1000_ccp.c	/^dw1000_ccp_stop(dw1000_dev_instance_t * inst){$/;"	f
+dw1000_dev_config	dw1000_dev.c	/^dw1000_dev_config(dw1000_dev_instance_t * inst)$/;"	f
+dw1000_dev_configure_sleep	dw1000_dev.c	/^dw1000_dev_configure_sleep(dw1000_dev_instance_t * inst, uint16_t mode, uint8_t wake)$/;"	f
+dw1000_dev_enter_sleep	dw1000_dev.c	/^dw1000_dev_enter_sleep(dw1000_dev_instance_t * inst)$/;"	f
+dw1000_dev_enter_sleep_after_tx	dw1000_dev.c	/^dw1000_dev_enter_sleep_after_tx(dw1000_dev_instance_t * inst, int enable)$/;"	f
+dw1000_dev_free	dw1000_dev.c	/^dw1000_dev_free(dw1000_dev_instance_t * inst){$/;"	f
+dw1000_dev_init	dw1000_dev.c	/^dw1000_dev_init(struct os_dev *odev, void *arg)$/;"	f
+dw1000_dev_wakeup	dw1000_dev.c	/^dw1000_dev_wakeup(dw1000_dev_instance_t * inst)$/;"	f
+dw1000_find_extension_callbacks_position	dw1000_dev.c	/^dw1000_find_extension_callbacks_position(dw1000_dev_instance_t *inst, dw1000_extension_id_t id){$/;"	f	file:
+dw1000_get_rssi	dw1000_mac.c	/^dw1000_get_rssi(struct _dw1000_dev_instance_t * inst)$/;"	f
+dw1000_gpio_config_leds	dw1000_gpio.c	/^void dw1000_gpio_config_leds(struct _dw1000_dev_instance_t * inst, dw1000_led_modes_t mode)$/;"	f
+dw1000_gpio_direction	dw1000_gpio.c	/^void dw1000_gpio_direction(struct _dw1000_dev_instance_t * inst, uint32_t gpioNum, uint32_t direction)$/;"	f
+dw1000_gpio_set	dw1000_gpio.c	/^void dw1000_gpio_set(struct _dw1000_dev_instance_t * inst, uint32_t gpioNum, uint32_t value)$/;"	f
+dw1000_interrupt_ev_cb	dw1000_mac.c	/^static void dw1000_interrupt_ev_cb(struct os_event *ev)$/;"	f	file:
+dw1000_interrupt_task	dw1000_mac.c	/^static void dw1000_interrupt_task(void *arg)$/;"	f	file:
+dw1000_irq	dw1000_mac.c	/^static void dw1000_irq(void *arg)$/;"	f	file:
+dw1000_ll_input	dw1000_lwip.c	/^dw1000_ll_input(struct pbuf *pt, struct netif *dw1000_netif){$/;"	f
+dw1000_ll_output	dw1000_lwip.c	/^dw1000_ll_output(struct netif *dw1000_netif, struct pbuf *p){$/;"	f
+dw1000_low_level_init	dw1000_lwip.c	/^dw1000_low_level_init( dw1000_dev_instance_t * inst, $/;"	f
+dw1000_lwip_config	dw1000_lwip.c	/^dw1000_lwip_config(dw1000_dev_instance_t * inst, dw1000_lwip_config_t * config){$/;"	f
+dw1000_lwip_free	dw1000_lwip.c	/^dw1000_lwip_free(dw1000_lwip_instance_t * inst){$/;"	f
+dw1000_lwip_init	dw1000_lwip.c	/^dw1000_lwip_init(dw1000_dev_instance_t * inst, dw1000_lwip_config_t * config, uint16_t nframes, uint16_t buf_len){$/;"	f
+dw1000_lwip_set_callbacks	dw1000_lwip.c	/^dw1000_lwip_set_callbacks( dw1000_dev_instance_t * inst, dw1000_dev_cb_t tx_complete_cb, $/;"	f
+dw1000_lwip_start_rx	dw1000_lwip.c	/^dw1000_lwip_start_rx(dw1000_dev_instance_t * inst, uint16_t timeout){$/;"	f
+dw1000_lwip_write	dw1000_lwip.c	/^dw1000_lwip_write(dw1000_dev_instance_t * inst, struct pbuf *p, dw1000_lwip_modes_t mode){$/;"	f
+dw1000_mac_framefilter	dw1000_mac.c	/^struct _dw1000_dev_status_t dw1000_mac_framefilter(struct _dw1000_dev_instance_t * inst, uint16_t enable)$/;"	f
+dw1000_mac_init	dw1000_mac.c	/^struct _dw1000_dev_status_t dw1000_mac_init(struct _dw1000_dev_instance_t * inst, dw1000_dev_config_t * config)$/;"	f
+dw1000_netif_config	dw1000_lwip.c	/^dw1000_netif_config(dw1000_dev_instance_t *inst, struct netif *dw1000_netif, ip_addr_t *my_ip_addr, bool rx_status){$/;"	f
+dw1000_netif_init	dw1000_lwip.c	/^dw1000_netif_init(struct netif *dw1000_netif){$/;"	f
+dw1000_new_extension_callbacks	dw1000_dev.c	/^dw1000_new_extension_callbacks(dw1000_dev_instance_t* inst){$/;"	f	file:
+dw1000_pan_blink	dw1000_pan.c	/^dw1000_pan_blink(dw1000_dev_instance_t * inst, dw1000_dev_modes_t mode){$/;"	f	file:
+dw1000_pan_free	dw1000_pan.c	/^dw1000_pan_free(dw1000_dev_instance_t * inst){$/;"	f
+dw1000_pan_init	dw1000_pan.c	/^dw1000_pan_init(dw1000_dev_instance_t * inst,  dw1000_pan_config_t * config){$/;"	f
+dw1000_pan_set_ext_callbacks	dw1000_pan.c	/^void dw1000_pan_set_ext_callbacks(dw1000_dev_instance_t * inst, dw1000_extension_callbacks_t pan_cbs){$/;"	f
+dw1000_pan_set_postprocess	dw1000_pan.c	/^dw1000_pan_set_postprocess(dw1000_dev_instance_t * inst, os_event_fn * pan_postprocess){$/;"	f
+dw1000_pan_start	dw1000_pan.c	/^dw1000_pan_start(dw1000_dev_instance_t * inst, dw1000_dev_modes_t mode){$/;"	f
+dw1000_pan_stop	dw1000_pan.c	/^dw1000_pan_stop(dw1000_dev_instance_t * inst){$/;"	f
+dw1000_phy_config_lde	dw1000_phy.c	/^void dw1000_phy_config_lde(struct _dw1000_dev_instance_t * inst, int prfIndex)$/;"	f
+dw1000_phy_config_txrf	dw1000_phy.c	/^void dw1000_phy_config_txrf(struct _dw1000_dev_instance_t * inst, dw1000_dev_txrf_config_t *config)$/;"	f
+dw1000_phy_disable_sequencing	dw1000_phy.c	/^void dw1000_phy_disable_sequencing(struct _dw1000_dev_instance_t * inst){ $/;"	f
+dw1000_phy_external_sync	dw1000_phy.c	/^void dw1000_phy_external_sync(struct _dw1000_dev_instance_t * inst, uint8_t delay, bool enable){$/;"	f
+dw1000_phy_forcetrxoff	dw1000_phy.c	/^void dw1000_phy_forcetrxoff(struct _dw1000_dev_instance_t * inst)$/;"	f
+dw1000_phy_init	dw1000_phy.c	/^dw1000_dev_status_t dw1000_phy_init(struct _dw1000_dev_instance_t * inst, dw1000_dev_txrf_config_t * txrf_config){$/;"	f
+dw1000_phy_interrupt_mask	dw1000_phy.c	/^void dw1000_phy_interrupt_mask(struct _dw1000_dev_instance_t * inst, uint32_t bitmask, uint8_t enable)$/;"	f
+dw1000_phy_otp_read	dw1000_otp.c	/^void dw1000_phy_otp_read(struct _dw1000_dev_instance_t * inst, uint32_t address, uint32_t * buffer, uint16_t length)$/;"	f
+dw1000_phy_read_read_wakeupvbat_SI	dw1000_phy.c	/^float dw1000_phy_read_read_wakeupvbat_SI(struct _dw1000_dev_instance_t * inst)$/;"	f
+dw1000_phy_read_wakeuptemp_SI	dw1000_phy.c	/^float dw1000_phy_read_wakeuptemp_SI(struct _dw1000_dev_instance_t * inst)$/;"	f
+dw1000_phy_rx_reset	dw1000_phy.c	/^void dw1000_phy_rx_reset(struct _dw1000_dev_instance_t * inst)$/;"	f
+dw1000_phy_sysclk_ACC	dw1000_phy.c	/^inline void dw1000_phy_sysclk_ACC(struct _dw1000_dev_instance_t * inst, uint8_t mode){$/;"	f
+dw1000_phy_sysclk_LDE	dw1000_phy.c	/^void dw1000_phy_sysclk_LDE(struct _dw1000_dev_instance_t * inst){$/;"	f
+dw1000_phy_sysclk_PLL	dw1000_phy.c	/^inline void dw1000_phy_sysclk_PLL(struct _dw1000_dev_instance_t * inst){$/;"	f
+dw1000_phy_sysclk_SEQ	dw1000_phy.c	/^inline void dw1000_phy_sysclk_SEQ(struct _dw1000_dev_instance_t * inst){$/;"	f
+dw1000_phy_sysclk_XTAL	dw1000_phy.c	/^inline void dw1000_phy_sysclk_XTAL(struct _dw1000_dev_instance_t * inst){$/;"	f
+dw1000_pkg_init	dw1000_pkg.c	/^void dw1000_pkg_init(void){$/;"	f
+dw1000_provision_free	dw1000_provision.c	/^dw1000_provision_free(dw1000_dev_instance_t * inst){$/;"	f
+dw1000_provision_init	dw1000_provision.c	/^dw1000_provision_init(dw1000_dev_instance_t * inst, dw1000_provision_config_t config){$/;"	f
+dw1000_provision_request	dw1000_provision.c	/^dw1000_provision_request(dw1000_dev_instance_t * inst, dw1000_dev_modes_t mode){$/;"	f
+dw1000_provision_set_ext_callbacks	dw1000_provision.c	/^dw1000_provision_set_ext_callbacks(dw1000_dev_instance_t * inst, dw1000_extension_callbacks_t provision_cbs){$/;"	f
+dw1000_provision_set_postprocess	dw1000_provision.c	/^dw1000_provision_set_postprocess(dw1000_dev_instance_t * inst, os_event_fn * provision_postprocess){$/;"	f
+dw1000_provision_start	dw1000_provision.c	/^dw1000_provision_start(dw1000_dev_instance_t * inst){$/;"	f
+dw1000_provision_stop	dw1000_provision.c	/^dw1000_provision_stop(dw1000_dev_instance_t * inst){$/;"	f
+dw1000_range_free	dw1000_range.c	/^dw1000_range_free(dw1000_dev_instance_t *inst){$/;"	f
+dw1000_range_init	dw1000_range.c	/^dw1000_range_init(dw1000_dev_instance_t * inst, uint16_t nnodes, uint16_t node_addr[]){$/;"	f
+dw1000_range_reset_nodes	dw1000_range.c	/^dw1000_range_reset_nodes(dw1000_dev_instance_t * inst, uint16_t node_addr[], uint16_t nnodes){$/;"	f
+dw1000_range_set_ext_callbacks	dw1000_range.c	/^void dw1000_range_set_ext_callbacks(dw1000_dev_instance_t * inst, dw1000_extension_callbacks_t range_cbs){$/;"	f
+dw1000_range_set_nodes	dw1000_range.c	/^dw1000_range_set_nodes(dw1000_dev_instance_t *inst, uint16_t node_addr[], uint16_t nnodes)$/;"	f
+dw1000_range_set_postprocess	dw1000_range.c	/^dw1000_range_set_postprocess(dw1000_dev_instance_t * inst, os_event_fn * range_postprocess){$/;"	f
+dw1000_range_start	dw1000_range.c	/^dw1000_range_start(dw1000_dev_instance_t * inst, dw1000_rng_modes_t code){$/;"	f
+dw1000_range_stop	dw1000_range.c	/^dw1000_range_stop(dw1000_dev_instance_t * inst){$/;"	f
+dw1000_read	dw1000_dev.c	/^dw1000_read(dw1000_dev_instance_t * inst, uint16_t reg, uint16_t subaddress, uint8_t * buffer, uint16_t length){$/;"	f
+dw1000_read_accdata	dw1000_mac.c	/^struct _dw1000_dev_status_t dw1000_read_accdata(struct _dw1000_dev_instance_t * inst, uint8_t *buffer, uint16_t accOffset, uint16_t len)$/;"	f
+dw1000_read_reg	dw1000_dev.c	/^dw1000_read_reg(dw1000_dev_instance_t * inst, uint16_t reg, uint16_t subaddress, size_t nbytes)$/;"	f
+dw1000_read_rxdiag	dw1000_mac.c	/^void dw1000_read_rxdiag(struct _dw1000_dev_instance_t * inst, struct _dw1000_dev_rxdiag_t * diag)$/;"	f
+dw1000_read_rxtime	dw1000_mac.c	/^inline uint64_t dw1000_read_rxtime(struct _dw1000_dev_instance_t * inst){$/;"	f
+dw1000_read_rxtime_lo	dw1000_mac.c	/^inline uint32_t dw1000_read_rxtime_lo(struct _dw1000_dev_instance_t * inst){$/;"	f
+dw1000_read_systime	dw1000_mac.c	/^inline uint64_t dw1000_read_systime(struct _dw1000_dev_instance_t * inst){$/;"	f
+dw1000_read_systime_lo	dw1000_mac.c	/^inline uint32_t dw1000_read_systime_lo(struct _dw1000_dev_instance_t * inst){$/;"	f
+dw1000_read_txtime	dw1000_mac.c	/^inline uint64_t dw1000_read_txtime(struct _dw1000_dev_instance_t * inst){$/;"	f
+dw1000_read_txtime_lo	dw1000_mac.c	/^inline uint32_t dw1000_read_txtime_lo(struct _dw1000_dev_instance_t * inst){$/;"	f
+dw1000_remove_extension_callbacks	dw1000_dev.c	/^dw1000_remove_extension_callbacks(dw1000_dev_instance_t* inst, dw1000_extension_id_t id){$/;"	f
+dw1000_restart_rx	dw1000_mac.c	/^struct _dw1000_dev_status_t dw1000_restart_rx(struct _dw1000_dev_instance_t * inst, dw1000_dev_control_t control)$/;"	f
+dw1000_rng_bias_correction	dw1000_rng.c	/^dw1000_rng_bias_correction(dw1000_dev_instance_t * inst, float Pr){$/;"	f
+dw1000_rng_config	dw1000_rng.c	/^dw1000_rng_config(dw1000_dev_instance_t * inst, dw1000_rng_config_t * config){$/;"	f
+dw1000_rng_free	dw1000_rng.c	/^dw1000_rng_free(dw1000_rng_instance_t * inst){$/;"	f
+dw1000_rng_init	dw1000_rng.c	/^dw1000_rng_init(dw1000_dev_instance_t * inst, dw1000_rng_config_t * config, uint16_t nframes){$/;"	f
+dw1000_rng_path_loss	dw1000_rng.c	/^dw1000_rng_path_loss(float Pt, float G, float fc, float R){$/;"	f
+dw1000_rng_request	dw1000_rng.c	/^dw1000_rng_request(dw1000_dev_instance_t * inst, uint16_t dst_address, dw1000_rng_modes_t code){$/;"	f
+dw1000_rng_request_delay_start	dw1000_rng.c	/^dw1000_rng_request_delay_start(dw1000_dev_instance_t * inst, uint16_t dst_address, uint64_t delay, dw1000_rng_modes_t code){$/;"	f
+dw1000_rng_reset_frames	dw1000_range.c	/^dw1000_rng_reset_frames(dw1000_dev_instance_t * inst, twr_frame_t twr[], uint16_t nframes){$/;"	f
+dw1000_rng_set_callbacks	dw1000_rng.c	/^dw1000_rng_set_callbacks(dw1000_dev_instance_t * inst,  dw1000_dev_cb_t rng_tx_complete_cb, dw1000_dev_cb_t rng_rx_complete_cb,  dw1000_dev_cb_t rng_rx_timeout_cb,  dw1000_dev_cb_t rng_rx_error_cb){$/;"	f
+dw1000_rng_set_frames	dw1000_rng.c	/^dw1000_rng_set_frames(dw1000_dev_instance_t * inst, twr_frame_t twr[], uint16_t nframes){$/;"	f
+dw1000_rng_twr_to_tof	dw1000_rng.c	/^dw1000_rng_twr_to_tof(dw1000_rng_instance_t * rng){$/;"	f
+dw1000_rng_twr_to_tof	dw1000_rng.c	/^dw1000_rng_twr_to_tof(twr_frame_t *fframe, twr_frame_t *nframe){$/;"	f
+dw1000_rng_twr_to_tof_sym	dw1000_rng.c	/^dw1000_rng_twr_to_tof_sym(twr_frame_t twr[], dw1000_rng_modes_t code){$/;"	f
+dw1000_set_autoack	dw1000_mac.c	/^struct _dw1000_dev_status_t dw1000_set_autoack(struct _dw1000_dev_instance_t * inst, bool enable)$/;"	f
+dw1000_set_autoack_delay	dw1000_mac.c	/^struct _dw1000_dev_status_t dw1000_set_autoack_delay(struct _dw1000_dev_instance_t * inst, uint8_t delay)$/;"	f
+dw1000_set_callbacks	dw1000_mac.c	/^void dw1000_set_callbacks(struct _dw1000_dev_instance_t * inst,  dw1000_dev_cb_t tx_complete_cb,  dw1000_dev_cb_t rx_complete_cb,  dw1000_dev_cb_t rx_timeout_cb,  dw1000_dev_cb_t rx_error_cb)$/;"	f
+dw1000_set_dblrxbuff	dw1000_mac.c	/^struct _dw1000_dev_status_t dw1000_set_dblrxbuff(struct _dw1000_dev_instance_t * inst, bool enable)$/;"	f
+dw1000_set_delay_start	dw1000_mac.c	/^inline struct _dw1000_dev_status_t dw1000_set_delay_start(struct _dw1000_dev_instance_t * inst, uint64_t delay)$/;"	f
+dw1000_set_rx_timeout	dw1000_mac.c	/^struct _dw1000_dev_status_t dw1000_set_rx_timeout(struct _dw1000_dev_instance_t * inst, uint16_t timeout)$/;"	f
+dw1000_set_wait4resp	dw1000_mac.c	/^inline struct _dw1000_dev_status_t dw1000_set_wait4resp(struct _dw1000_dev_instance_t * inst, bool enable)$/;"	f
+dw1000_set_wait4resp_delay	dw1000_mac.c	/^struct _dw1000_dev_status_t dw1000_set_wait4resp_delay(struct _dw1000_dev_instance_t * inst, uint32_t delay)$/;"	f
+dw1000_softreset	dw1000_dev.c	/^dw1000_softreset(dw1000_dev_instance_t * inst)$/;"	f
+dw1000_start_rx	dw1000_mac.c	/^struct _dw1000_dev_status_t dw1000_start_rx(struct _dw1000_dev_instance_t * inst)$/;"	f
+dw1000_start_tx	dw1000_mac.c	/^struct _dw1000_dev_status_t dw1000_start_tx(struct _dw1000_dev_instance_t * inst)$/;"	f
+dw1000_sync_rxbufptrs	dw1000_mac.c	/^struct _dw1000_dev_status_t dw1000_sync_rxbufptrs(struct _dw1000_dev_instance_t * inst)$/;"	f
+dw1000_tasks_init	dw1000_mac.c	/^void dw1000_tasks_init(struct _dw1000_dev_instance_t * inst)$/;"	f
+dw1000_write	dw1000_dev.c	/^dw1000_write(dw1000_dev_instance_t * inst, uint16_t reg, uint16_t subaddress, uint8_t * buffer, uint16_t length)$/;"	f
+dw1000_write_reg	dw1000_dev.c	/^dw1000_write_reg(dw1000_dev_instance_t * inst, uint16_t reg, uint16_t subaddress, uint64_t val, size_t nbytes)$/;"	f
+dw1000_write_tx	dw1000_mac.c	/^struct _dw1000_dev_status_t dw1000_write_tx(struct _dw1000_dev_instance_t * inst,  uint8_t * txFrameBytes, uint16_t txBufferOffset, uint16_t txFrameLength)$/;"	f
+dw1000_write_tx_fctrl	dw1000_mac.c	/^inline void dw1000_write_tx_fctrl(struct _dw1000_dev_instance_t * inst, uint16_t txFrameLength, uint16_t txBufferOffset, bool ranging)$/;"	f
+dwnsSFDlen	dw1000_mac.c	/^const uint8_t dwnsSFDlen[] =$/;"	v
+frames	dw1000_pan.c	/^static pan_frame_t frames[] = {$/;"	v	file:
+fs_pll_cfg	dw1000_mac.c	/^const uint32_t fs_pll_cfg[] =$/;"	v
+fs_pll_tune	dw1000_mac.c	/^const uint8_t fs_pll_tune[] =$/;"	v
+g_fs_xtalt_a	dw1000_ccp.c	/^static float g_fs_xtalt_a[] ={$/;"	v	file:
+g_fs_xtalt_b	dw1000_ccp.c	/^static float g_fs_xtalt_b[] ={$/;"	v	file:
+g_fs_xtalt_poly	dw1000_ccp.c	/^static float g_fs_xtalt_poly[] ={$/;"	v	file:
+hal_dw1000_get_rst	dw1000_hal.c	/^hal_dw1000_get_rst(struct _dw1000_dev_instance_t * inst)$/;"	f
+hal_dw1000_inst	dw1000_hal.c	/^hal_dw1000_inst(uint8_t idx){$/;"	f
+hal_dw1000_instances	dw1000_hal.c	/^static dw1000_dev_instance_t hal_dw1000_instances[]= {$/;"	v	file:
+hal_dw1000_read	dw1000_hal.c	/^hal_dw1000_read(struct _dw1000_dev_instance_t * inst, const uint8_t * cmd, uint8_t cmd_size, uint8_t * buffer, uint16_t length)$/;"	f
+hal_dw1000_reset	dw1000_hal.c	/^hal_dw1000_reset(struct _dw1000_dev_instance_t * inst)$/;"	f
+hal_dw1000_wakeup	dw1000_hal.c	/^hal_dw1000_wakeup(struct _dw1000_dev_instance_t * inst)$/;"	f
+hal_dw1000_write	dw1000_hal.c	/^hal_dw1000_write(struct _dw1000_dev_instance_t * inst, const uint8_t * cmd, uint8_t cmd_size, uint8_t * buffer, uint16_t length)$/;"	f
+lde_replicaCoeff	dw1000_mac.c	/^const uint16_t lde_replicaCoeff[] =$/;"	v
+lo32	dw1000_mac.c	/^    uint32_t lo32;$/;"	m	struct:__anon1	file:
+pan_postprocess	dw1000_pan.c	/^pan_postprocess(struct os_event * ev){$/;"	f	file:
+pan_rx_complete_cb	dw1000_pan.c	/^pan_rx_complete_cb(dw1000_dev_instance_t * inst){$/;"	f	file:
+pan_rx_error_cb	dw1000_pan.c	/^pan_rx_error_cb(dw1000_dev_instance_t * inst){$/;"	f	file:
+pan_rx_timeout_cb	dw1000_pan.c	/^pan_rx_timeout_cb(dw1000_dev_instance_t * inst){$/;"	f	file:
+pan_timer_ev_cb	dw1000_pan.c	/^pan_timer_ev_cb(struct os_event *ev) {$/;"	f	file:
+pan_timer_init	dw1000_pan.c	/^pan_timer_init(dw1000_dev_instance_t * inst) {$/;"	f	file:
+pan_tx_complete_cb	dw1000_pan.c	/^pan_tx_complete_cb(dw1000_dev_instance_t * inst){$/;"	f	file:
+pan_tx_error_cb	dw1000_pan.c	/^pan_tx_error_cb(dw1000_dev_instance_t * inst){$/;"	f	file:
+postprocess	dw1000_range.c	/^static void postprocess(struct os_event * ev){$/;"	f	file:
+print_error	dw1000_lwip.c	/^print_error(err_t error){$/;"	f
+provision_add_node	dw1000_provision.c	/^provision_add_node(dw1000_dev_instance_t *inst, uint16_t addr){$/;"	f
+provision_delete_node	dw1000_provision.c	/^provision_delete_node(dw1000_dev_instance_t *inst, uint16_t addr){$/;"	f
+provision_postprocess	dw1000_provision.c	/^provision_postprocess(struct os_event * ev){$/;"	f	file:
+provision_rx_complete_cb	dw1000_provision.c	/^provision_rx_complete_cb(dw1000_dev_instance_t* inst){$/;"	f	file:
+provision_rx_error_cb	dw1000_provision.c	/^provision_rx_error_cb(dw1000_dev_instance_t * inst){$/;"	f	file:
+provision_rx_timeout_cb	dw1000_provision.c	/^provision_rx_timeout_cb(dw1000_dev_instance_t * inst){$/;"	f	file:
+provision_timer_ev_cb	dw1000_provision.c	/^provision_timer_ev_cb(struct os_event *ev) {$/;"	f	file:
+provision_timer_init	dw1000_provision.c	/^provision_timer_init(dw1000_dev_instance_t * inst) {$/;"	f	file:
+provision_tx_complete_cb	dw1000_provision.c	/^provision_tx_complete_cb(dw1000_dev_instance_t * inst){$/;"	f	file:
+provision_tx_error_cb	dw1000_provision.c	/^provision_tx_error_cb(dw1000_dev_instance_t * inst){$/;"	f	file:
+range_callout_postprocess	dw1000_range.c	/^static struct os_callout range_callout_postprocess;$/;"	v	typeref:struct:os_callout	file:
+range_callout_timer	dw1000_range.c	/^static struct os_callout range_callout_timer;$/;"	v	typeref:struct:os_callout	file:
+range_complete_cb	dw1000_range.c	/^static void range_complete_cb(dw1000_dev_instance_t *inst){$/;"	f	file:
+range_error_cb	dw1000_range.c	/^static void range_error_cb(dw1000_dev_instance_t *inst){$/;"	f	file:
+range_reg_postprocess	dw1000_range.c	/^static void range_reg_postprocess(dw1000_dev_instance_t * inst, os_event_fn * rng_postprocess){$/;"	f	file:
+range_timer_ev_cb	dw1000_range.c	/^range_timer_ev_cb(struct os_event *ev) {$/;"	f	file:
+range_timer_init	dw1000_range.c	/^range_timer_init(dw1000_dev_instance_t *inst) {$/;"	f	file:
+range_tx_complete_cb	dw1000_range.c	/^range_tx_complete_cb(dw1000_dev_instance_t* inst){$/;"	f	file:
+rng_bias_poly_PRF16	dw1000_rng.c	/^static float rng_bias_poly_PRF16[] ={$/;"	v	file:
+rng_bias_poly_PRF64	dw1000_rng.c	/^static float rng_bias_poly_PRF64[] ={$/;"	v	file:
+rng_rx_complete_cb	dw1000_rng.c	/^rng_rx_complete_cb(dw1000_dev_instance_t * inst)$/;"	f	file:
+rng_rx_error_cb	dw1000_rng.c	/^rng_rx_error_cb(dw1000_dev_instance_t * inst){$/;"	f	file:
+rng_rx_timeout_cb	dw1000_rng.c	/^rng_rx_timeout_cb(dw1000_dev_instance_t * inst){$/;"	f	file:
+rng_tx_complete_cb	dw1000_rng.c	/^rng_tx_complete_cb(dw1000_dev_instance_t * inst)$/;"	f	file:
+rng_tx_final_cb	dw1000_rng.c	/^rng_tx_final_cb(dw1000_dev_instance_t * inst){$/;"	f	file:
+rx_complete_cb	dw1000_lwip.c	/^rx_complete_cb(dw1000_dev_instance_t * inst){$/;"	f	file:
+rx_config	dw1000_mac.c	/^const uint8_t rx_config[] =$/;"	v
+rx_error_cb	dw1000_lwip.c	/^rx_error_cb(dw1000_dev_instance_t * inst){$/;"	f
+rx_timeout_cb	dw1000_lwip.c	/^rx_timeout_cb(dw1000_dev_instance_t * inst){$/;"	f	file:
+sftsh	dw1000_mac.c	/^const uint16_t sftsh[NUM_BR][NUM_SFD] =$/;"	v
+target	dw1000_mac.c	/^    uint16_t target[NUM_PRF];$/;"	m	struct:__anon1	file:
+tx_complete_cb	dw1000_lwip.c	/^tx_complete_cb(dw1000_dev_instance_t * inst){$/;"	f	file:
+tx_config	dw1000_mac.c	/^const uint32_t tx_config[] =$/;"	v
+txpwr_compensation	dw1000_mac.c	/^const double txpwr_compensation[] = {$/;"	v

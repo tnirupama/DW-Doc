@@ -1,0 +1,96 @@
+
+syscfg.defs:
+    DW1000_DEV_TASK_PRIO:
+        description: 'Task priority'
+        value:  5
+    DW1000_DEV_TASK_STACK_SZ:
+        description: 'Size of interrupt task stack'
+        value: 512
+    DW1000_SS_TWR_ENABLED:
+        description: 'Single sided TWR Enabled'
+        value: 1
+    DW1000_DS_TWR_ENABLED:
+        description: 'Double sided TWR Enabled'
+        value: 1
+    DW1000_DS_TWR_EXT_ENABLED:
+        description: 'Double sided extended mode Enable'
+        value: 1
+    DW1000_LWIP:
+        description: 'Enable LWIP functionality'
+        value: 1
+    DW1000_CCP_ENABLED:
+        description: 'Enable wireless clock calibration'
+        value: 1
+    DW1000_PAN:
+        description: 'Private Area Network functionality'
+        value: 1
+    DW1000_MAC_FILTERING:
+        description: 'Enable the mac filtering'
+        value: 0
+    DW1000_PROVISION:
+        description: 'Enable independent provision module'
+        value: 1
+    DW1000_RANGE:
+        description: 'TWR Ranging functionality'
+        value: 1
+    DW1000_BIAS_CORRECTION_ENABLED:
+        description: 'Enable range bias correction polynomial'
+        value: 1
+    DW1000_DEVICE_TX_PWR:
+        description: 'Tx Power dBm'
+        value: ((float){-14.3f})
+    DW1000_DEVICE_ANT_GAIN:
+        description: 'Antenna Gain dB'
+        value: ((float){1.0f})
+    DW1000_DEVICE_FREQ:  
+        description: 'Center frequency Hz'
+        value: ((float){6489.6f})
+    LOCAL_COORDINATE_X:
+        description: >
+            Default Anchor X Coordinate  
+        value: ((float){0.0f})
+    DW1000_RNG_INDICATE_LED:
+        description: 'Toggle LED_1 for every range packet received'
+        value: 0
+    LOCAL_COORDINATE_Y:
+        description: >
+            Default Anchor Y Coordinate  
+        value: ((float){0.0f})
+    LOCAL_COORDINATE_Z:
+        description: >
+            Default Anchor Z Coordinate  
+        value: ((float){0.0f})
+    RANGE_VARIANCE:
+        description: >
+            Range Measurement Variance 
+        value: ((float){5.4444e-04})
+    AZIMUTH_VARIANCE:
+        description: >
+            Azimuth Measurement Variance 
+        value: ((float){2.91e-2})
+    CCP_PERIOD:
+        description: >
+            Clock Calibration Packets Period 
+        value: ((uint32_t){0x100000})
+    PAN_PERIOD:
+        description: >
+            PAN Discovery Packets Period 
+        value: ((uint32_t){0x200000})
+    RANGE_PERIOD:
+        description: >
+            Ranging period
+        value: ((uint32_t){0x3000})
+    PROVISION_PERIOD:
+        description: >
+            Provision packet period(in ms)
+        value: ((uint32_t){100})
+    OS_LATENCY:
+        description: >
+            OS Latency Guardband 
+        value: ((uint32_t){0x1000})
+    FS_XTALT_AUTOTUNE_ENABLED: 
+        description: >
+            Autotune XTALT to Clock Master
+        value: 0
+        restrictions: DW1000_CCP_ENABLED
+        
