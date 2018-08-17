@@ -90,7 +90,7 @@ typedef struct _dw1000_lwip_instance_t{
 
 //! lwip callback 
 typedef struct _dw1000_lwip_cb_t{
-   void (*recv)(dw1000_dev_instance_t * inst, uint16_t timeout);
+   void (*recv)(dw1000_dev_instance_t * inst, uint16_t timeout);  //!< Keep tracks of lwip tx/rx status
 }dw1000_lwip_cb_t;
 
 //! lwip context based on callback 

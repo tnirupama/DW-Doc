@@ -57,9 +57,9 @@ typedef union {
     struct _ccp_frame_t{
 //! Frame format of blink frame
         struct _ieee_blink_frame_t;          
-        uint64_t transmission_timestamp;    //!< transmission timestamp.
-        uint64_t reception_timestamp;       //!< reception timestamp.
-        float correction_factor;            //!< receiver clock correction factor
+        uint64_t transmission_timestamp;    //!< Transmission timestamp
+        uint64_t reception_timestamp;       //!< Reception timestamp
+        float correction_factor;            //!< Receiver clock correction factor
     }__attribute__((__packed__, aligned(1)));
     uint8_t array[sizeof(struct _ieee_blink_frame_t)];
 }ccp_frame_t;
@@ -76,19 +76,19 @@ typedef struct _dw1000_ccp_status_t{
 //! ccp config structure of postprocess 
 typedef struct _dw1000_ccp_config_t{
     uint16_t postprocess:1;           //!< CCP postprocess
-    uint16_t fs_xtalt_autotune:1;     //!< 
+    uint16_t fs_xtalt_autotune:1;     //!< Autotune XTALT to Clock Master
 }dw1000_ccp_config_t;
 
 //! Structure of ccp instance
 typedef struct _dw1000_ccp_instance_t{
     struct _dw1000_dev_instance_t * parent;     //!< Pointer to _dw1000_dev_instance_t
 #if MYNEWT_VAL(CLOCK_CALIBRATION_ENABLED)
-    struct _clkcal_instance_t * clkcal;         //!< TODO
+    struct _clkcal_instance_t * clkcal;         //!< Wireless clock calibration 
 #endif
 #if MYNEWT_VAL(FS_XTALT_AUTOTUNE_ENABLED)
-    struct _sos_instance_t * xtalt_sos;        //!< TODO
+    struct _sos_instance_t * xtalt_sos;        //!< Sturcture of xtalt_sos 
 #endif
-    struct os_sem sem;                          //!<Structure containing os semaphores
+    struct os_sem sem;                          //!< Structure containing os semaphores
     struct os_callout callout_timer;            //!< Structure of callout_timer
     struct os_callout callout_postprocess;      //!< Structure of callout_postprocess
     dw1000_ccp_status_t status;                 //!< DW1000 ccp status parameters

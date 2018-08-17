@@ -199,7 +199,7 @@ range_tx_complete_cb(dw1000_dev_instance_t* inst){
 }
 
 /**
- * This function initaites the range_callout_postprocess(os callout ) with rng_postprocess 
+ * This function initiates the range_callout_postprocess(os callout) with rng_postprocess 
  * \n       and links to default queue.
  *
  * @param inst              pointer to dw1000_dev_instance_t

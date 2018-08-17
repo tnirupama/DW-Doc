@@ -61,9 +61,9 @@ extern "C" {
 #define DWT_PAC32       2   //!< PAC 32 (recommended for RX of preamble length  512
 #define DWT_PAC64       3   //!< PAC 64 (recommended for RX of preamble length 1024 and up
 
-//! Constants for specifying TX Preamble length in symbols
-//! These are defined to allow them be directly written into byte 2 of the TX_FCTRL register
-//! (i.e. a four bit value destined for bits 20..18 but shifted left by 2 for byte alignment)
+//! Constants for specifying TX Preamble length in symbols.
+//! These are defined to allow them be directly written into byte 2 of the TX_FCTRL register.
+//! (i.e. a four bit value destined for bits 20..18 but shifted left by 2 for byte alignment).
 #define DWT_PLEN_4096   0x0C    //!< Standard preamble length 4096 symbols
 #define DWT_PLEN_2048   0x28    //!< Non-standard preamble length 2048 symbols
 #define DWT_PLEN_1536   0x18    //!< Non-standard preamble length 1536 symbols
@@ -73,11 +73,11 @@ extern "C" {
 #define DWT_PLEN_128    0x14    //!< Non-standard preamble length 128 symbols
 #define DWT_PLEN_64     0x04    //!< Standard preamble length 64 symbols
 
-#define DWT_SFDTOC_DEF              0x1041  //!< default SFD timeout value
+#define DWT_SFDTOC_DEF              0x1041  //!< Default SFD timeout value
 #define DWT_PHRMODE_STD             0x0     //!< standard PHR mode
 #define DWT_PHRMODE_EXT             0x3     //!< DW proprietary extended frames PHR mode
 
-//! Defined constants for "mode" bitmask parameter passed into dw1000_starttx() function.
+//! Defined constants for "mode" bitmask parameter passed into dw1000_start_tx() function.
 typedef enum _dw1000_start_tx_modes_t {
     DWT_START_TX_IMMEDIATE = 1 << 0,     //!< Set up immediate tx to transmit immediately
     DWT_START_TX_DELAYED = 1 << 1,       //!< Set up delayed TX, if "late" error triggers, then the TX will be enabled immediately
@@ -87,9 +87,9 @@ typedef enum _dw1000_start_tx_modes_t {
 //! Defined constants for "mode" bitmask parameter passed into dw1000_start_rx() function.
 typedef enum _dw1000_start_rx_modes_t {
     DWT_START_RX_IMMEDIATE = 1 << 0, //!< Set up immediate RX, to start receiving immediatley 
-    DWT_START_RX_DELAYED = 1 << 1,  //!< Set up delayed RX, if "late" error triggers, then the RX will be enabled immediately
+    DWT_START_RX_DELAYED = 1 << 1,  //!< Set up delayed RX, if "late" error triggers, then the RX will be enabled immediately.
     DWT_IDLE_ON_DLY_ERR = 1 << 2,   //!< If delayed RX failed due to "late" error then if this 
-                                    //!< flag is set the RX will not be re-enabled immediately, and device will be in IDLE when function exits
+                                    //!< flag is set the RX will not be re-enabled immediately, and device will be in IDLE when function exits.
     DWT_NO_SYNC_PTRS = 1 << 3       //!< Do not try to sync IC side and Host side buffer pointers when enabling RX. This is used to perform 
                             
                                     //!< manual rx re-enabling when receiving a frame in double buffer mode.
@@ -218,7 +218,7 @@ uint32_t dw1000_read_txtime_lo(struct _dw1000_dev_instance_t * inst);
 #define dw1000_read_txtime_lo(inst) (uint32_t) dw1000_read_reg(inst, TX_TIME_ID, TX_TIME_TX_STAMP_OFFSET, sizeof(uint32_t)) //!< Read transmit time at lower offset address
 #endif //MYNEWT_VAL(CLOCK_CALIBRATION_ENABLED)
 
-#define dw1000_get_irqstatus(inst) ((uint8_t) dw1000_read_reg(inst, SYS_STATUS_ID, SYS_STATUS_OFFSET,sizeof(uint8_t)) & (uint8_t) SYS_STATUS_IRQS) //!< Get th status of irq
+#define dw1000_get_irqstatus(inst) ((uint8_t) dw1000_read_reg(inst, SYS_STATUS_ID, SYS_STATUS_OFFSET,sizeof(uint8_t)) & (uint8_t) SYS_STATUS_IRQS) //!< Get the status of irq
 
 #ifdef __cplusplus
 }

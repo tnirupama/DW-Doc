@@ -63,7 +63,7 @@ static void rx_complete_cb(dw1000_dev_instance_t * inst);
 static void tx_complete_cb(dw1000_dev_instance_t * inst);
 static void rx_timeout_cb(dw1000_dev_instance_t * inst);
 static void rx_error_cb(dw1000_dev_instance_t * inst);
-dw1000_lwip_context_t cntxt; // lwip context based callback 
+dw1000_lwip_context_t cntxt; //!< lwip context based callback 
 
 /**
  * Function to assign the config parameters

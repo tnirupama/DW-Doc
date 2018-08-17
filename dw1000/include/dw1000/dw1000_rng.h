@@ -37,13 +37,13 @@
 #include "dw1000/triad.h"
 
 #if MYNEWT_VAL(DW1000_SS_TWR_ENABLED)
-#define SS_TWR_ENABLE
+#define SS_TWR_ENABLE         //!< Enable single_sided_TWR mode
 #endif
 #if MYNEWT_VAL(DW1000_DS_TWR_ENABLED)
-#define DS_TWR_ENABLE
+#define DS_TWR_ENABLE        //!< Enable double_sided_TWR mode
 #endif
 #if MYNEWT_VAL(DW1000_DS_TWR_EXT_ENABLED)
-#define DS_TWR_EXT_ENABLE
+#define DS_TWR_EXT_ENABLE    //!< Enable double_sided_extended_TWR mode
 #endif
 
 #ifdef __cplusplus
@@ -58,10 +58,10 @@ extern "C" {
 
 //! Structure of delay parameters of range.
 typedef struct _dw1000_rng_config_t{
-   uint32_t rx_holdoff_delay;        //!< Delay between frames, in UWB usec
-   uint32_t tx_holdoff_delay;        //!< Delay between frames, in UWB usec
-   uint16_t rx_timeout_period;       //!< Receive response timeout, in UWB usec
-   uint16_t bias_correction:1;       //!< Enable range bias correction
+   uint32_t rx_holdoff_delay;        //!< Delay between frames, in UWB usec.
+   uint32_t tx_holdoff_delay;        //!< Delay between frames, in UWB usec.
+   uint16_t rx_timeout_period;       //!< Receive response timeout, in UWB usec.
+   uint16_t bias_correction:1;       //!< Enable range bias correction polynomial
 }dw1000_rng_config_t;
 
 //!< Structure of range control containing delay start.
@@ -123,12 +123,12 @@ typedef union {
 #ifdef DS_TWR_EXT_ENABLE
         union {
 //! Structure of TWR data
-            struct _twr_data_t;
-            uint8_t payload[sizeof(struct _twr_data_t)];
+            struct _twr_data_t;                            //!< Structure of twr_data
+            uint8_t payload[sizeof(struct _twr_data_t)];   //!< Payload of size twr_data 
         };
 #endif
     } __attribute__((__packed__, aligned(1)));
-    uint8_t array[sizeof(struct _twr_frame_t)];
+    uint8_t array[sizeof(struct _twr_frame_t)];        //!< Array of size twr_frame
 } twr_frame_t;
 
 //! Structure of range callbacks

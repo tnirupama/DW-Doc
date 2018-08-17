@@ -43,7 +43,7 @@ static inline void _dw1000_phy_load_microcode(struct _dw1000_dev_instance_t * in
  * force system clock to be the 19.2 MHz XTI clock
  * 
  * @param inst  pointer to dw1000_dev_instance_t 
- * @param void
+ * @return void
  */
 inline void dw1000_phy_sysclk_XTAL(struct _dw1000_dev_instance_t * inst){
  uint8_t reg = (uint8_t) dw1000_read_reg(inst, PMSC_ID, PMSC_CTRL0_OFFSET, sizeof(uint8_t));

@@ -38,11 +38,11 @@
 extern "C" {
 #endif
 
-#define FCNTL_IEEE_BLINK_CCP_64 0xC5
-#define FCNTL_IEEE_BLINK_TAG_64 0x56 
-#define FCNTL_IEEE_BLINK_ANC_64 0x57
-#define FCNTL_IEEE_RANGE_16     0x8841
-#define FCNTL_IEEE_PROVISION_16 0x8844
+#define FCNTL_IEEE_BLINK_CCP_64 0xC5        //!< CCP blink frame control 
+#define FCNTL_IEEE_BLINK_TAG_64 0x56        //!< Tag blink frame control 
+#define FCNTL_IEEE_BLINK_ANC_64 0x57        //!< Anchor blink frame control
+#define FCNTL_IEEE_RANGE_16     0x8841      //!< Range frame control 
+#define FCNTL_IEEE_PROVISION_16 0x8844      //!< Provision frame control
 
 //! IEEE 802.15.4e standard blink. It is a 12-byte frame composed of the following fields
 typedef union{
@@ -52,7 +52,7 @@ typedef union{
         uint8_t seq_num;            //!< sequence number, incremented for each new frame
         uint64_t long_address;      //!< Device ID
     }__attribute__((__packed__));
-    uint8_t array[sizeof(struct _ieee_blink_frame_t)];
+    uint8_t array[sizeof(struct _ieee_blink_frame_t)]; //!< Array of size blink frame
 }ieee_blink_frame_t;
 
 //! ISO/IEC 24730-62:2013 standard blink. It is a 14-byte frame composed of the following fields
@@ -65,7 +65,7 @@ typedef union {
         uint8_t encoding;           //!< 0x43 to indicate no extended ID
         uint8_t EXT_header ;        //!< 0x02 to indicate tag is listening for a response immediately
     }__attribute__((__packed__,aligned(1)));
-    uint8_t array[sizeof(struct _ieee_blink_frame_ext_t)];
+    uint8_t array[sizeof(struct _ieee_blink_frame_ext_t)];  //!< Array of size extended blink frame 
 }ieee_blink_frame_ext_t;
 
 //! IEEE 802.15.4 standard ranging frames
@@ -79,7 +79,7 @@ typedef union {
         uint16_t src_address;       //!< Source address
         uint16_t code;              //!< Response code for the request 
     }__attribute__((__packed__,aligned(1)));    
-    uint8_t array[sizeof(struct _ieee_rng_request_frame_t)];
+    uint8_t array[sizeof(struct _ieee_rng_request_frame_t)];  //!< Array of size range request frame
 } ieee_rng_request_frame_t;
 
 //! Standard response frame
@@ -90,7 +90,7 @@ typedef union {
         uint32_t reception_timestamp;    //!< Request reception timestamp
         uint32_t transmission_timestamp; //!< Response transmission timestamp
     }__attribute__((__packed__,aligned(1)));
-    uint8_t array[sizeof(struct _ieee_rng_response_frame_t)];
+    uint8_t array[sizeof(struct _ieee_rng_response_frame_t)]; //!< Array of size range response frame
 } ieee_rng_response_frame_t;
 
 //! IEEE 802.15.4 standard data frame
@@ -104,7 +104,7 @@ typedef union {
         uint16_t src_address;       //!< Source address
         uint16_t code;              //!< Response code for the request 
     }__attribute__((__packed__,aligned(1)));          
-    uint8_t array[sizeof(struct _ieee_std_frame_t)];
+    uint8_t array[sizeof(struct _ieee_std_frame_t)];  //!< Array of size standard frame
 } ieee_std_frame_t;
 
 

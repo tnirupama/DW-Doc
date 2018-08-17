@@ -81,9 +81,9 @@ typedef struct _dw1000_pan_status_t{
 
 //! Structure containing pan configurations
 typedef struct _dw1000_pan_config_t{
-    uint32_t rx_holdoff_delay;        //!< Delay between frames, in UWB usec
-    uint16_t rx_timeout_period;       //!< Receive response timeout, in UWB usec
-    uint32_t tx_holdoff_delay;        //!< Delay between frames, in UWB usec
+    uint32_t rx_holdoff_delay;        //!< Delay between frames, in UWB usec.
+    uint16_t rx_timeout_period;       //!< Receive response timeout, in UWB usec.
+    uint32_t tx_holdoff_delay;        //!< Delay between frames, in UWB usec.
 }dw1000_pan_config_t;
 
 //! ccp config structure of postprocess 
@@ -93,14 +93,14 @@ typedef struct _dw1000_pan_control_t{
 
 //! Structure containing DW1000 pan instance parameters
 typedef struct _dw1000_pan_instance_t{
-    struct _dw1000_dev_instance_t * parent;   //!< pointer to _dw1000_dev_instance_t
-    struct os_sem sem;                        //!< Structure containing os semaphores
-    struct os_sem sem_waitforsucess;          //!< Structure containig os semaphores
-    dw1000_pan_status_t status;               //!< DW1000 pan status parameters
-    dw1000_pan_control_t control;             //!< DW1000 pan control parameters
-    struct os_callout pan_callout_timer;        //!< Structure of pan_callout_timer
-    struct os_callout pan_callout_postprocess;  //!< Structure of pan_callout_postprocess
-    dw1000_pan_config_t * config;               //!< DW1000 pan config parameters
+    struct _dw1000_dev_instance_t * parent;      //!< pointer to _dw1000_dev_instance_t
+    struct os_sem sem;                           //!< Structure containing os semaphores
+    struct os_sem sem_waitforsucess;             //!< Structure containig os semaphores
+    dw1000_pan_status_t status;                  //!< DW1000 pan status parameters
+    dw1000_pan_control_t control;                //!< DW1000 pan control parameters
+    struct os_callout pan_callout_timer;         //!< Structure of pan_callout_timer
+    struct os_callout pan_callout_postprocess;   //!< Structure of pan_callout_postprocess
+    dw1000_pan_config_t * config;                //!< DW1000 pan config parameters
     uint32_t period;                             //!< Pulse repetition period
     uint16_t nframes;                            //!< Number of buffers defined to store the data
     uint16_t idx;                                //!< Indicates number of DW1000 instances
