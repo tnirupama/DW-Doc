@@ -32,7 +32,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <assert.h>
-//#include <os/os_cputime.h>
+#include <os/os_cputime.h>
 #include <os/os_dev.h>
 #include <syscfg/syscfg.h>
 #include <hal/hal_spi.h>
@@ -188,9 +188,9 @@ static dw1000_dev_instance_t hal_dw1000_instances[]= {
 };
 #endif
 /**
- * choose DW1000 instances based on parameters
+ * choose DW1000 instances based on parameters.
  *
- * @param idx  Indicates number of instances for the chosen bsp 
+ * @param idx  Indicates number of instances for the chosen bsp. 
  * @return dw1000_dev_instance_t 
  */
 
@@ -199,22 +199,22 @@ hal_dw1000_inst(uint8_t idx){
     
 #if  MYNEWT_VAL(DW1000_DEVICE_0) 
 #if  MYNEWT_VAL(DW1000_DEVICE_1)
-    assert(idx < 2);  // Only two instance for chosen bsp
+    assert(idx < 2);  //!< Only two instance for chosen bsp
 #else
-    assert(idx < 1);  // Only one instance for chosen bsp
+    assert(idx < 1);  //!< Only one instance for chosen bsp
 #endif
     return &hal_dw1000_instances[idx];
 #else
-    assert(0);  // no instance for chosen bsp
+    assert(0);  //!< no instance for chosen bsp
 #endif
 
 
 }
 
 /**
- * This call resets all the gpio pins
+ * This call resets all the gpio pins.
  *
- * @param inst  pointer to dw1000_dev_instance_t
+ * @param inst  Pointer to dw1000_dev_instance_t.
  * @return void
  */
 void  
@@ -233,13 +233,13 @@ hal_dw1000_reset(struct _dw1000_dev_instance_t * inst)
 }
 
 /**
- * This call enables the API which is a blocking call to send a value on the SPI, returns the value received from the SPI slave
+ * This call enables the API which is a blocking call to send a value on the SPI, returns the value received from the SPI slave.
  *
- * @param inst      pointer to dw1000_dev_instance_t
- * @param cmd       represents an array of masked attributes like reg,subindex,operation,extended,subaddress
- * @param cmd_size  represents value based on the cmd attributes
- * @param buffer    results are stored into the buffer
- * @param length    represents buffer length
+ * @param inst      Pointer to dw1000_dev_instance_t.
+ * @param cmd       Represents an array of masked attributes like reg,subindex,operation,extended,subaddress.
+ * @param cmd_size  Represents value based on the cmd attributes.
+ * @param buffer    Results are stored into the buffer.
+ * @param length    Represents buffer length.
  * @return void
  */
 void 
@@ -267,13 +267,13 @@ hal_dw1000_read(struct _dw1000_dev_instance_t * inst, const uint8_t * cmd, uint8
 }
 
 /**
- * This call enables the API which is a blocking call to send a value on the SPI, returns the value received from the SPI slave
+ * This call enables the API which is a blocking call to send a value on the SPI, returns the value received from the SPI slave.
  *
- * @param inst      pointer to dw1000_dev_instance_t
- * @param cmd       represents an array of masked attributes like reg,subindex,operation,etended,subaddress
- * @param cmd_size  represents value based on the cmd attributes
- * @param buffer    results are stored into the buffer
- * @param length    represents buffer length 
+ * @param inst      Pointer to dw1000_dev_instance_t.
+ * @param cmd       Represents an array of masked attributes like reg,subindex,operation,extended,subaddress.
+ * @param cmd_size  Represents value based on the cmd attributes.
+ * @param buffer    Results are stored into the buffer.
+ * @param length    Represents buffer length. 
  * @return void
  */
 void 
@@ -301,10 +301,10 @@ hal_dw1000_write(struct _dw1000_dev_instance_t * inst, const uint8_t * cmd, uint
 }
 
 /**
- * This call disables the spi after entering into critical section and wait for certain time before it enables the spi 
- * and exit from the critical section
+ * This call disables the spi after entering into critical section and wait for certain time before it enables the SPI 
+ * and exit from the critical section.
  *
- * @param inst  pointer to dw1000_dev_instance_t 
+ * @param inst  Pointer to dw1000_dev_instance_t. 
  * @return void
  */
 void 
@@ -340,9 +340,9 @@ hal_dw1000_wakeup(struct _dw1000_dev_instance_t * inst)
 }
 
 /**
- * Read the current level of the rst pin.When sleeping dw1000 will let this pin should go low 
+ * Read the current level of the rst pin.When sleeping dw1000 will let this pin should go low. 
  * 
- * @param inst  pointer to dw1000_dev_instance_t
+ * @param inst  Pointer to dw1000_dev_instance_t
  * @return status of rst_pin
  */
 int

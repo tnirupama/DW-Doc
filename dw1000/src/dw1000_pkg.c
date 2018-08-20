@@ -40,7 +40,7 @@
 #include <dw1000/dw1000_phy.h>
 
 /**
- * API to initialize the dw1000 instances
+ * API to initialize the dw1000 instances.
  *
  * @param void
  * @return void

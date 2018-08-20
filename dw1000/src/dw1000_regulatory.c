@@ -25,7 +25,7 @@
  * @date 2018
  * @brief Regulatory file
  *
- * @details This is the regulatory base class which includes header files
+ * @details This is the regulatory base class which includes header files.
  */
 
 #include <stdio.h>

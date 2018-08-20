@@ -94,7 +94,7 @@ static void ccp_postprocess(struct os_event * ev);
  * The DW1000 delay start mechanism then takes care of the actual event. This removes the non-deterministic 
  * latencies of the OS implementation.  
  * 
- * @param ev  pointer to queue of events
+ * @param ev  Pointer to queue of events.
  * @return void
  */
 static void 
@@ -109,9 +109,9 @@ ccp_timer_ev_cb(struct os_event *ev) {
 }
 
 /**
- * The default eventq is used. 
+ * The initiates timer for ccp.
  * 
- * @param inst pointer to dw1000_dev_instance_t 
+ * @param inst  Pointer to dw1000_dev_instance_t.
  * @return void 
  */
 static void 
@@ -131,7 +131,7 @@ ccp_timer_init(struct _dw1000_dev_instance_t * inst) {
  * This function allocates all the required resources. In the case of a large scale deployment multiple instances 
  * can be uses to track multiple clock domains. 
  * 
- * @param inst          pointer to dw1000_dev_instance_t 
+ * @param inst          Pointer to dw1000_dev_instance_t. 
  * @param nframes       Nominally set to 2 frames for the simple use case. But depending on the interpolation 
  * algorithm this should be set accordingly. For example, four frames are required or bicubic interpolation. 
  * @param clock_master  UUID address of the system clock_master all other masters are rejected.  
@@ -211,7 +211,7 @@ dw1000_ccp_init(struct _dw1000_dev_instance_t * inst, uint16_t nframes, uint64_t
 /** 
  * Deconstructor
  * 
- * @param inst pointer to dw1000_dev_instance_t 
+ * @param inst   Pointer to dw1000_dev_instance_t.
  * @return void
  */
 void 
@@ -232,6 +232,13 @@ dw1000_ccp_free(dw1000_ccp_instance_t * inst){
         inst->status.initialized = 0;
 }
 
+/**
+ * This sets extension callbacks in ccp.
+ *
+ * @param inst     Pointer to dw1000_dev_instance_t
+ * @param ccp_cbs  Callbacks of ccp.
+ * @return void
+ */
 void dw1000_ccp_set_ext_callbacks(dw1000_dev_instance_t * inst, dw1000_extension_callbacks_t ccp_cbs){
     ccp_cbs.id = DW1000_CCP;
     dw1000_add_extension_callbacks(inst , ccp_cbs);
@@ -242,7 +249,8 @@ void dw1000_ccp_set_ext_callbacks(dw1000_dev_instance_t * inst, dw1000_extension
  * Overrides the default post-processing behaviors, replacing the JSON stream with an alternative 
  * or an advanced timescale processing algorithm.
  * 
- * @param inst pointer to dw1000_dev_instance_t 
+ * @param inst              Pointer to dw1000_dev_instance_t. 
+ * @param ccp_postprocess   Pointer to os_events.
  * @return void
  */
 void 
@@ -253,9 +261,9 @@ dw1000_ccp_set_postprocess(dw1000_ccp_instance_t * inst, os_event_fn * ccp_postp
 
 #if MYNEWT_VAL(CLOCK_CALIBRATION_ENABLED) !=1
 /** 
- * This serves as a place holder for timescale processing and by default is creates json string for the event
+ * This serves as a place holder for timescale processing and by default is creates json string for the event.
  *
- * @param inst  pointer to dw1000_dev_instance_t
+ * @param inst  Pointer to dw1000_dev_instance_t.
  * @return void 
  */
 static void ccp_postprocess(struct os_event * ev){
@@ -288,7 +296,7 @@ static void ccp_postprocess(struct os_event * ev){
  * 
  * The fs_xtalt adjustments align crystals to 1us (1PPM) while timescale processing resolves timestamps to sub 1ns.
  *
- * @param inst pointer to dw1000_dev_instance_t  
+ * @param inst   Pointer to dw1000_dev_instance_t.  
  * @return void 
  */
 static void 
@@ -376,7 +384,7 @@ ccp_rx_complete_cb(struct _dw1000_dev_instance_t * inst){
  * from now. This provided a context switch guard zone. The assumption is that the underlying OS will have sufficient time start 
  * the call dw1000_set_delay_start within dw1000_ccp_blink. 
  *
- * @param inst pointer to dw1000_dev_instance_t  
+ * @param inst    Pointer to dw1000_dev_instance_t  
  * @return void 
  */
 static void 
@@ -409,9 +417,9 @@ ccp_tx_complete_cb(struct _dw1000_dev_instance_t * inst){
 }
 
 /** 
- * A place holder for rx_error_cb for ccp.
+ * A place holder for rx_error_cb of ccp.
  *
- * @param inst pointer to dw1000_dev_instance_t  
+ * @param inst   pointer to dw1000_dev_instance_t.  
  * @return void
  */
 static void
@@ -427,9 +435,9 @@ ccp_rx_error_cb(struct _dw1000_dev_instance_t * inst){
 }
 
 /** 
- * A place holder for tx_error_cb for ccp.
+ * A place holder for tx_error_cb of ccp.
  *
- * @param inst pointer to dw1000_dev_instance_t 
+ * @param inst   Pointer to dw1000_dev_instance_t. 
  * @return void 
  */
 static void
@@ -445,9 +453,9 @@ ccp_tx_error_cb(struct _dw1000_dev_instance_t * inst){
 }
 
 /** 
- * A place holder for rx_error_cb for ccp.
+ * A place holder for rx_error_cb of ccp.
  *
- * @param inst pointer to dw1000_dev_instance_t 
+ * @param inst   Pointer to dw1000_dev_instance_t. 
  * @return void 
  */
 static void
@@ -469,8 +477,8 @@ ccp_rx_timeout_cb(struct _dw1000_dev_instance_t * inst){
  * This function is static function for internl use. It will force a Half Period Delay Warning is called at 
  * out of sequence.   
  *
- * @param inst   pointer to dw1000_dev_instance_t 
- * @param mode   dw1000_ccp_modes_t for CCP_BLOCKING, CCP_NONBLOCKING modes.
+ * @param inst   Pointer to dw1000_dev_instance_t. 
+ * @param mode   dw1000_ccp_modes_t for CCP_BLOCKING, CCP_NON_BLOCKING modes.
  * @return dw1000_ccp_status_t 
  */
 static dw1000_ccp_status_t 
@@ -511,7 +519,7 @@ dw1000_ccp_blink(struct _dw1000_dev_instance_t * inst, dw1000_dev_modes_t mode){
  * Start clock calibration packets (CCP) blinks. 
  * With a pulse repetition period of MYNEWT_VAL(CCP_PERIOD).   
  *
- * @param inst pointer to dw1000_dev_instance_t 
+ * @param inst   Pointer to dw1000_dev_instance_t. 
  * @return void
  */
 void 
@@ -528,7 +536,7 @@ dw1000_ccp_start(struct _dw1000_dev_instance_t * inst){
 /**
  * Stop clock calibration packets (CCP) blinks.   
  *
- * @param inst pointer to  dw1000_dev_instance_t 
+ * @param inst   Pointer to  dw1000_dev_instance_t. 
  * @return void
  */
 void 

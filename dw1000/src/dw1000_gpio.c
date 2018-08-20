@@ -25,7 +25,7 @@
  * @date 2018
  * @brief General Purpose Input Output
  *
- * @details This is the gpio base class which utilises functions to enable/disable all the configurations related to GPIO
+ * @details This is the gpio base class which utilises functions to enable/disable all the configurations related to GPIO.
  */
 
 #include <stdio.h>
@@ -38,11 +38,11 @@
 
 
 /**
- * This is used to set up Tx/Rx GPIOs which could be used to control LEDs
+ * This is used to set up Tx/Rx GPIOs which could be used to control LEDs.
  * Note: not completely IC dependent, also needs board with LEDS fitted on right I/O lines
- *       this function enables GPIOs 2 and 3 which are connected to LED3 and LED4 on EVB1000
+ *       this function enables GPIOs 2 and 3 which are connected to LED3 and LED4 on EVB1000.
  *
- * @param inst  pointer to _dw1000_dev_instance_t
+ * @param inst  pointer to _dw1000_dev_instance_t.
  * @param mode  This is a bit field interpreted as follows:
  *          - bit 0: 1 to enable LEDs, 0 to disable them
  *          - bit 1: 1 to make LEDs blink once on init. Only valid if bit 0 is set (enable LEDs)
@@ -58,7 +58,7 @@ void dw1000_gpio_config_leds(struct _dw1000_dev_instance_t * inst, dw1000_led_mo
         // Set up MFIO for LED output.
         reg = (uint32_t) dw1000_read_reg(inst, GPIO_CTRL_ID, GPIO_MODE_OFFSET, sizeof(uint32_t));
         reg &= ~(GPIO_MSGP2_MASK | GPIO_MSGP3_MASK);
-        reg |= (GPIO_PIN2_RXLED | GPIO_PIN3_TXLED);
+        reg |= (GPIO_PIN3_RXLED | GPIO_PIN3_TXLED);
         dw1000_write_reg(inst, GPIO_CTRL_ID, GPIO_MODE_OFFSET, reg, sizeof(uint32_t));
 
         // Enable LP Oscillator to run from counter and turn on de-bounce clock.
@@ -86,10 +86,10 @@ void dw1000_gpio_config_leds(struct _dw1000_dev_instance_t * inst, dw1000_led_mo
 }
 
 /**
- * This is used to set GPIO direction as an input (1) or output (0)
+ * This is used to set GPIO direction as an input (1) or output (0).
  *
- * @param gpioNum       this is the GPIO to configure - see GxM0... GxM8 in the deca_regs.h file
- * @param direction     this sets the GPIO direction - see GxP0... GxP8 in the deca_regs.h file
+ * @param gpioNum       This is the GPIO to configure - see GxM0... GxM8 in the deca_regs.h file.
+ * @param direction     This sets the GPIO direction - see GxP0... GxP8 in the deca_regs.h file.
  *
  * @return void
  */
@@ -106,10 +106,10 @@ void dw1000_gpio_direction(struct _dw1000_dev_instance_t * inst, uint32_t gpioNu
 }
 
 /**
- * This is used to set GPIO value as (1) or (0) only applies if the GPIO is configured as output
+ * This is used to set GPIO value as (1) or (0) only applies if the GPIO is configured as output.
  *
- * @param gpioNum    this is the GPIO to configure - see GxM0... GxM8 in the deca_regs.h file
- * @param value      this sets the GPIO value - see GDP0... GDP8 in the deca_regs.h file
+ * @param gpioNum    This is the GPIO to configure - see GxM0... GxM8 in the deca_regs.h file.
+ * @param value      This sets the GPIO value - see GDP0... GDP8 in the deca_regs.h file.
  *
  * @return void
  */

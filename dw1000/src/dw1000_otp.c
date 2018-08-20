@@ -25,7 +25,7 @@
  * @date 2018
  * @brief one time programmable memory
  *
- * @details This is the otp base class which utilises functions to read from the address specified in the OTP_ADDR register
+ * @details This is the otp base class which utilises functions to read from the address specified in the OTP_ADDR register.
  *
  */
 
@@ -43,12 +43,12 @@
 #include <dw1000/dw1000_otp.h>
 
 /**
- * This API takes the given address and enables otp_read from the succeeding address
+ * This API takes the given address and enables otp_read from the succeeding address.
  *
- * @param inst     pointer to dw1000_dev_instance_t
- * @param address  from where it starts reading
- * @param buffer   result is stored into buffer
- * @param length   represents length of the buffer 
+ * @param inst     Pointer to dw1000_dev_instance_t.
+ * @param address  From where it starts reading.
+ * @param buffer   Result is stored into buffer.
+ * @param length   Represents length of the buffer. 
  * @return void
  *
  */
@@ -63,11 +63,11 @@ void dw1000_phy_otp_read(struct _dw1000_dev_instance_t * inst, uint32_t address,
 }
 
 /**
- * This performs a read operation from the address specified
+ * This performs a read operation from the address specified.
  *   
- * @param inst     pointer to dw1000_dev_instance_t
- * @param address  from where it starts reading 
- * @return data value read from an OTP location
+ * @param inst     Pointer to dw1000_dev_instance_t.
+ * @param address  From where it starts reading 
+ * @return data value read from an OTP location.
  */
 
 uint32_t _dw1000_otp_read(struct _dw1000_dev_instance_t * inst, uint16_t address)
