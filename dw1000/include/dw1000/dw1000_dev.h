@@ -140,12 +140,12 @@ typedef struct _dw1000_dev_txrf_config_t {
             uint8_t BOOSTP125;      //!< PWR 
          };
          struct _manual { 
-            uint8_t _NA1;
-            uint8_t TXPOWPHR;
-            uint8_t TXPOWSD;
-            uint8_t _NA4;
+            uint8_t _NA1;           //!< TODO  
+            uint8_t TXPOWPHR;       //!< TODO
+            uint8_t TXPOWSD;        //!< TODO
+            uint8_t _NA4;           //!< TODO   
          };
-        uint32_t power;          
+        uint32_t power;             //!< TODO
     };
 }dw1000_dev_txrf_config_t;
 

@@ -25,7 +25,7 @@
  * @date 2018
  * @brief General Purpose Input Output
  *
- * @details This is the gpio base class which utilises functions to enable/disable all the configurations related to GPIO
+ * @details This is the gpio base class which utilises functions to enable/disable all the configurations related to GPIO.
  */
 
 #ifndef _DW1000_GPIO_H_

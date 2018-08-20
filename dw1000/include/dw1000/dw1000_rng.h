@@ -25,7 +25,7 @@
  * @date 2018
  * @brief Range 
  *
- * @details This is the rng base class which utilises the functions to enable/disable the configurations related to rng
+ * @details This is the rng base class which utilises the functions to enable/disable the configurations related to rng.
  *
  */
 
@@ -107,7 +107,7 @@ typedef struct _twr_frame_final_t{
 
 //! Structure of TWR data
 typedef struct _twr_data_t{
-                uint64_t utime;
+                uint64_t utime;                     //!< CPU time to usecs
                 triad_t spherical;                  //!< Measurement triad spherical coordinates
                 triad_t spherical_variance;         //!< Measurement variance triad 
                 triad_t cartesian;                  //!< Position triad local coordinates

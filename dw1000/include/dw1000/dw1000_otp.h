@@ -25,7 +25,7 @@
  * @date 2018
  * @brief one time programmable memory
  *
- * @details This is the otp base class which utilises functions to read from the address specified in the OTP_ADDR register
+ * @details This is the otp base class which utilises functions to read from the address specified in the OTP_ADDR register.
  *
  */
 
